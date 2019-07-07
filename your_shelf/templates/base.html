@@ -1,0 +1,34 @@
+<!doctype html>
+{% load static %}
+<html lang="ja">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{% block page_title %}{% endblock %}</title>
+
+    <link rel="stylesheet" href="{% static 'vendor/semantic/semantic.min.css' %}">
+    <style type="text/css">
+        body {
+            background-color: #dadada;
+        }
+        body > .container {
+            height: 100%;
+        }
+    </style>
+    {% block extra_css %}{% endblock %}
+
+</head>
+<body>
+<div class="ui container">
+    {% block content %}{% endblock %}
+</div>
+
+
+{# --- js --- #}
+<script src="{% static 'js/jquery-3.3.1.min.js' %}"></script>
+<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+<script src="{% static 'vendor/semantic/semantic.min.js' %}"></script>
+{% block extra_js %}{% endblock %}
+</body>
+</html>
