@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block extra_css %}
+
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="header"><a href="{% url 'books:book_detail' book.title %}">{{ book.title }}</a></div>
+    <div class="ui divided list">
+        <span class="item">
+            <div class="ui horizontal label">著者</div>{{ book.author }}
+        </span>
+        <span class="item">
+            <div class="ui horizontal label">価格</div>{{ book.price }}円
+        </span>
+        <span class="item">
+            <div class="ui horizontal label">出版社</div>{{ book.publisher }}
+        </span>
+        <span class="item">
+            <div class="ui horizontal label">出版日</div>{{ book.publish_date|date:"Y年m月d日" }}
+        </span>
+        <span class="item">
+            <div class="ui horizontal label">要約</div>
+            <div class="description">{{ book.abstract|default:""|linebreaksbr|truncatechars_html:20 }}</div>
+        </span>
+    </div>
+</div>
+<div class="extra content">
+    <a href="{% url 'books:index' %}" class="ui right floated positive button">一覧へ</a>
+</div>
+{% endblock %}
