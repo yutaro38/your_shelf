@@ -13,8 +13,8 @@
     {% for user in user_list %}
     <div class="ui card">
         <div class="image">
-            {% if user.image %}
-            <img src="{{ user.image.url }}">
+            {% if user.photo %}
+            <img src="{{ user.photo.url }}">
             {% else %}
             <img src="{% static 'images/unknown_user.png'%}">
             {% endif %}

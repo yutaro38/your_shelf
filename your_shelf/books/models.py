@@ -11,7 +11,7 @@ class Book(models.Model):
 
     # フィールドを定義
     title = models.CharField(verbose_name='タイトル', max_length=255)
-    image = models.ImageField(verbose_name='画像', null=True, blank=True)
+    image = models.ImageField(verbose_name='画像', null=True, blank=True, upload_to='images/books/')
     deadline = models.DateField(verbose_name='返却日')
     author = models.CharField(verbose_name='著者', max_length=255, null=True, blank=True)
     price = models.IntegerField(verbose_name='価格', null=True, blank=True)
