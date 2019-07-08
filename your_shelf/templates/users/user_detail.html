@@ -9,6 +9,13 @@
 <div class="content">
     <div class="header"><a href="{% url 'users:user_detail' user.name %}">{{ user.name }}</a></div>
     <div class="ui divided list">
+      <div class="image">
+          {% if user.photo %}
+          <img src="{{ user.photo.url }}">
+          {% else %}
+          <img src="{% static 'images/unknown_user.png'%}">
+          {% endif %}
+      </div>
         <span class="item">
             <div class="ui horizontal label">Eメール</div>{{ user.email }}
         </span>
