@@ -17,6 +17,14 @@
     </div>
     <div class="ui divided list">
         <span class="item">
+            <div class="ui horizontal label">オーナー</div>
+            <a href="{% url 'users:user_detail' user_name=book.owner %}">{{ book.owner }}</a>
+        </span>
+        <span class="item">
+            <div class="ui horizontal label">ボロワー</div>
+            <a href="{% url 'users:user_detail' user_name=book.borrower %}">{{ book.borrower }}</a>
+        </span>
+        <span class="item">
             <div class="ui horizontal label">著者</div>{{ book.author }}
         </span>
         <span class="item">
@@ -30,15 +38,11 @@
         </span>
         <span class="item">
             <div class="ui horizontal label">要約</div>
-<<<<<<< HEAD
             <div class="description">{{ book.abstract|default:""|linebreaksbr }}</div>
-=======
-            <div class="description">{{ book.abstract|default:""|linebreaksbr}}</div>
->>>>>>> b3687c96152d0bb6227236863fac943b980afbfd
         </span>
     </div>
 </div>
 <div class="extra content">
-    <a href="{% url 'books:index' %}" class="ui right floated positive button">一覧へ</a>
+    <a href="{% url 'books:index' %}" class="ui right floated positive button">書籍一覧</a>
 </div>
 {% endblock %}
