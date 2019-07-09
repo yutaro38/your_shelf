@@ -123,5 +123,9 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = '/var/www/{}/static'.format(PROJECT_NAME)
 
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# 開発環境
+MIDIA_ROOT = os.path.join(BASE_DIR, 'media')
+# 本番環境
+# MIDIA_ROOT = '/var/www/{}/media'.format(PROJECT_NAME)
 MEDIA_URL = '/media/'
