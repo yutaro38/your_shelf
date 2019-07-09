@@ -1,5 +1,4 @@
 from django.db import models
-
 # Create your models here.
 
 class Book(models.Model):
@@ -7,12 +6,13 @@ class Book(models.Model):
     class Meta:
         # テーブル名を定義
         db_table = 'book'
-        app_label='books'
+        app_label= 'books'
 
     # フィールドを定義
+    owner = models.CharField(verbose_name='Owner', max_length=255)
+    borrower = models.CharField(verbose_name='Borrower', null=True, blank=True, max_length=255)
     title = models.CharField(verbose_name='タイトル', max_length=255)
     image = models.ImageField(verbose_name='画像', null=True, blank=True, upload_to='images/books/')
-    deadline = models.DateField(verbose_name='返却日')
     author = models.CharField(verbose_name='著者', max_length=255, null=True, blank=True)
     price = models.IntegerField(verbose_name='価格', null=True, blank=True)
     abstract = models.TextField(verbose_name='要約', null=True, blank=True)

@@ -1,14 +1,14 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_title %} ユーザーリスト {% endblock %}
+{% block page_title %} ユーザリスト {% endblock %}
 
 {% block extra_css %}
 
 {% endblock %}
 
 {% block content %}
-<h1>ユーザーリスト</h1>
+<h1>ユーザリスト</h1>
 <div class="ui four cards">
     {% for user in user_list %}
     <div class="ui card">
