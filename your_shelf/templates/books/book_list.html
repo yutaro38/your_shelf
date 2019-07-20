@@ -22,6 +22,14 @@
         <div class="content">
             <div class="header"><a href="{% url 'books:book_detail' book.title %}">{{ book.title }}</a></div>
             <div class="ui divided list">
+              <span class="item">
+                  <div class="ui horizontal label">オーナー</div>
+                  <a href="{% url 'users:user_detail' user_name=book.owner %}">{{ book.owner }}</a>
+              </span>
+              <span class="item">
+                  <div class="ui horizontal label">ボロワー</div>
+                  <a href="{% url 'users:user_detail' user_name=book.borrower %}">{{ book.borrower }}</a>
+              </span>
             </div>
         </div>
         <div class="extra content">
